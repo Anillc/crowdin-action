@@ -373,6 +373,10 @@ if [ "$INPUT_UPLOAD_TRANSLATIONS" = true ]; then
   upload_translations "$@"
 fi
 
+if [ -n "$INPUT_AFTER_UPLOAD" ]; then
+  eval "$INPUT_AFTER_UPLOAD"
+fi
+
 if [ "$INPUT_DOWNLOAD_SOURCES" = true ]; then
   download_sources "$@"
 
